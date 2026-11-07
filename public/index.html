@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NARR4R — Made 4 Narration</title>
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo">NARR<span class="four">4</span>R</div>
+  <p class="tag">Made 4 Narration — Tus libros y documentos, en voz humana. Sin deletrear.</p>
+  <div id="mode" class="mode">Detectando modo…</div>
+</header>
+<main>
+  <section class="card">
+    <label>1. Elige tu idioma / voz</label>
+    <select id="voice">
+      <option value="es-MX-AlvaroNeural">🇲🇽 Español México — Álvaro</option>
+      <option value="es-MX-DaliaNeural">🇲🇽 Español México — Dalia</option>
+      <option value="es-ES-AlvaroNeural">🇪🇸 Español España — Álvaro</option>
+      <option value="es-ES-ElviraNeural">🇪🇸 Español España — Elvira</option>
+      <option value="es-AR-TomasNeural">🇦🇷 Español Argentina — Tomás</option>
+      <option value="es-US-AlonsoNeural">🇺🇸 Español EE.UU. — Alonso</option>
+    </select>
+    <label>2. Sube tu PDF, libro o documento</label>
+    <input type="file" id="file" accept=".pdf"/>
+    <button id="btnExtract">📄 Limpiar texto</button>
+    <p class="hint">Primero revisa el texto limpio abajo. Si se ve como español normal, va a sonar bien.</p>
+  </section>
+  <section class="card">
+    <h3>Texto limpio — así lo va a leer</h3>
+    <textarea id="preview" rows="10" placeholder="Aquí aparecerá el texto ya limpio, sin código, sin URLs, sin encabezados repetidos…"></textarea>
+    <div class="row">
+      <button id="btnPlay" class="primary">▶️ Narrar</button>
+      <button id="btnStop">⏹️ Detener</button>
+      <button id="btnDownload">⬇️ Descargar MP3</button>
+    </div>
+    <audio id="audio" controls style="width:100%; margin-top:12px; display:none"></audio>
+    <p id="status"></p>
+  </section>
+  <section class="card small">
+    <b>¿Por qué no deletrea?</b> NARR4R borra código, URLs, encabezados repetidos y líneas sin vocales. Corta solo en oraciones completas, nunca en letras sueltas. En Codespaces usa voz neural Edge-TTS.
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
